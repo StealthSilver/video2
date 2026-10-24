@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>संकेतवाणी – लॉन्च फ़िल्म</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;800&family=Hind:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#14307a;--yel:#ffd54a;--blue:#2f6df6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light dark}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;background:#0e1626;font-family:'Hind',sans-serif}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+#stage{position:relative;width:min(100vw,calc((100vh - 60px)*16/9));aspect-ratio:16/9;background:#fff;overflow:hidden;container-type:inline-size;border-radius:6px}
+.bg{position:absolute;inset:0;background:radial-gradient(40% 60% at 15% 20%,#cfe3ff 0,transparent 70%),radial-gradient(40% 60% at 90% 85%,#ffeaa0 0,transparent 70%),radial-gradient(35% 50% at 85% 10%,#dbeaff 0,transparent 70%),#fffdf7;animation:drift 12s ease-in-out infinite alternate}
+@keyframes drift{to{transform:scale(1.12) translate(-1.5%,1%)}}
+.sc{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column}
+.sc.on{display:flex}
+.a{opacity:0;animation:up .8s cubic-bezier(.2,.8,.2,1) var(--d,0s) forwards}
+.t{opacity:0;animation:up .8s cubic-bezier(.2,.8,.2,1) var(--d,0s) forwards,out .6s ease var(--o,99s) forwards}
+@keyframes up{from{opacity:0;transform:translateY(4cqw) scale(.96)}to{opacity:1;transform:none}}
+@keyframes out{to{opacity:0;transform:translateY(-3cqw)}}
+h1,h2,.big{font-family:'Baloo 2',sans-serif;color:var(--navy);font-weight:800;line-height:1.15;text-align:center}
+.big{font-size:5.4cqw}.mid{font-size:3.4cqw}
+.sub{font-size:2.2cqw;color:#34457a;text-align:center;margin-top:.6cqw}
+.abs{position:absolute;left:0;right:0;text-align:center}
+.logo{width:13cqw;height:13cqw;background:var(--yel);border-radius:3cqw;display:grid;place-items:center;box-shadow:0 2cqw 4cqw #14307a22}
+.logo svg{width:70%;fill:var(--navy)}
+.ul{display:inline-block;background:linear-gradient(var(--yel),var(--yel)) bottom/100% .9cqw no-repeat;padding-bottom:.4cqw}
+.card{background:#fff;border-radius:2cqw;box-shadow:0 1.2cqw 3.5cqw #14307a22;padding:2cqw}
+.ui{width:62cqw;display:grid;grid-template-columns:1.25fr 1fr;gap:2cqw}
+.cam{background:linear-gradient(135deg,#dbe9ff,#f4f8ff);border-radius:1.4cqw;height:20cqw;position:relative;display:grid;place-items:center}
+.cam svg.h{width:9cqw;fill:#f2c9a0;stroke:#14307a;stroke-width:2}
+.box{position:absolute;width:13cqw;height:15cqw;border:.4cqw solid var(--blue);border-radius:1.2cqw;animation:pulse 1.2s ease-in-out infinite alternate}
+@keyframes pulse{to{transform:scale(1.06)}}
+.dot{position:absolute;width:.8cqw;height:.8cqw;border-radius:50%;background:#fff;border:.2cqw solid var(--blue)}
+.letter{font:800 11cqw 'Baloo 2';color:var(--blue);text-align:center;background:#eaf2ff;border-radius:1.4cqw;line-height:1.1;animation:pop .6s cubic-bezier(.3,1.6,.5,1) var(--d) both}
+@keyframes pop{from{transform:scale(0);opacity:0}}
+.word{display:flex;gap:1cqw;justify-content:center;margin-top:1.5cqw}
+.word b{font:800 4.4cqw 'Baloo 2';color:var(--navy);background:#fff;padding:.3cqw 1.4cqw;border-radius:1cqw;box-shadow:0 .4cqw 1.2cqw #14307a22;animation:pop .5s cubic-bezier(.3,1.6,.5,1) var(--d) both}
+.steps{display:flex;gap:2cqw;margin-top:3cqw}
+.steps div{background:#fff;padding:1cqw 2.4cqw;border-radius:5cqw;font:800 2.2cqw 'Baloo 2';color:var(--navy);box-shadow:0 .6cqw 2cqw #14307a22}
+.steps span{color:var(--blue)}
+.bento{display:grid;grid-template-columns:repeat(3,17cqw);gap:1.6cqw;margin-top:2.4cqw}
+.bento .card{text-align:center;padding:1.8cqw 1cqw;font:800 2.1cqw 'Baloo 2';color:var(--navy)}
+.bento small{display:block;font:400 1.5cqw 'Hind';color:#5a6a98}
+.bento i{display:block;font-style:normal;font-size:3.6cqw;margin-bottom:.4cqw}
+.fd{display:flex;gap:.8cqw;justify-content:center;margin-top:2cqw}
+.fd u{width:2.4cqw;height:2.4cqw;border-radius:50%;animation:pop .4s ease var(--d) both}
+.grid{display:grid;grid-template-columns:repeat(9,6cqw);gap:1cqw}
+.grid div{border-radius:1cqw;padding:.6cqw 0 .9cqw;text-align:center;font:800 2.4cqw 'Baloo 2';color:var(--navy);animation:pop .4s ease var(--d) both}
+.grid span{display:flex;gap:.2cqw;justify-content:center}
+.grid span u{width:.9cqw;height:.9cqw;border-radius:50%}
+#ctl{display:flex;gap:12px;align-items:center;color:#cbd6f2;font-size:14px;width:min(100vw,900px);padding:0 12px}
+#ctl button{background:var(--yel);border:0;border-radius:20px;padding:8px 18px;font:700 15px 'Hind';color:var(--navy);cursor:pointer}
+#bar{flex:1;height:6px;background:#26334f;border-radius:3px;overflow:hidden}#bar i{display:block;height:100%;width:0;background:var(--yel)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><symbol id="hand" viewBox="0 0 100 100"><rect x="40" y="6" width="15" height="52" rx="7.5"/><rect x="56" y="38" width="13" height="26" rx="6.5"/><rect x="69" y="44" width="12" height="22" rx="6"/><rect x="26" y="46" width="14" height="30" rx="7" transform="rotate(-25 33 60)"/><path d="M28 52h54v18a24 24 0 0 1-24 24h-6a24 24 0 0 1-24-24z"/></symbol></svg>
+<div id="stage"><div class="bg"></div>
+
+<!-- Scene 1 -->
+<section class="sc" id="s0">
+ <svg class="a" style="--d:.2s;width:14cqw;fill:var(--navy);position:absolute;top:30%;animation-name:up,out;animation-duration:.8s,.6s;animation-delay:.2s,5.4s;animation-fill-mode:forwards" viewBox="0 0 100 100"><use href="#hand"/></svg>
+ <div class="abs t big" style="top:14%;--d:.8s;--o:3.2s">जब शब्द न हों...</div>
+ <div class="abs t big" style="top:58%;--d:3.4s;--o:5.8s;font-size:3.8cqw">तब भी बहुत कुछ कहा जा सकता है</div>
+ <div class="logo a" style="--d:6.4s"><svg viewBox="0 0 100 100"><use href="#hand"/></svg></div>
+ <h1 class="a" style="--d:7.2s;font-size:7cqw;margin-top:1.4cqw"><span class="ul">संकेतवाणी</span></h1>
+ <div class="sub a" style="--d:8.2s">हाथों से जुड़ें, शब्दों में बदलें</div>
+</section>
+
+<!-- Scene 2 -->
+<section class="sc" id="s1">
+ <div class="abs a mid big" style="top:6%;--d:.2s;font-size:3.4cqw">संकेत पहचानें, अक्षर पाएँ</div>
+ <div class="card ui a" style="--d:.6s;margin-top:3cqw">
+  <div class="cam"><svg class="h" viewBox="0 0 100 100"><use href="#hand"/></svg><div class="box"></div>
+   <i class="dot" style="left:45%;top:22%"></i><i class="dot" style="left:47%;top:36%"></i><i class="dot" style="left:50%;top:50%"></i><i class="dot" style="left:56%;top:58%"></i><i class="dot" style="left:42%;top:62%"></i></div>
+  <div><div class="letter" style="--d:3s">A</div>
+   <div class="word"><b style="--d:5s">C</b><b style="--d:5.8s">A</b><b style="--d:6.6s">T</b></div></div>
+ </div>
+ <div class="steps"><div class="a" style="--d:1.4s"><span>१</span> कैमरा चालू करें</div><div class="a" style="--d:2.6s"><span>२</span> संकेत पहचानें</div><div class="a" style="--d:4.4s"><span>३</span> शब्द बनाएँ</div></div>
+</section>
+
+<!-- Scene 3 -->
+<section class="sc" id="s2">
+ <div class="big a" style="--d:.2s;font-size:3.8cqw">अक्षर लिखिए, <span class="ul">संकेत सीखिए</span></div>
+ <div class="bento">
+  <div class="card a" style="--d:1s"><i>⚡</i>रियल-टाइम पहचान<small>हाथ का संकेत तुरंत</small></div>
+  <div class="card a" style="--d:1.6s"><i>🔊</i>पढ़कर सुनाए<small>लिखा हुआ बोलकर</small></div>
+  <div class="card a" style="--d:2.2s"><i>📋</i>कॉपी करें<small>एक क्लिक में</small></div>
+  <div class="card a" style="--d:2.8s"><i>🔤</i>A–Z सभी अक्षर<small>सीखें और अभ्यास करें</small></div>
+  <div class="card a" style="--d:3.4s"><i>🖐️</i>एनिमेटेड संकेत<small>अक्षर देखकर सीखें</small></div>
+  <div class="card a" style="--d:4s"><i>📱</i>फ़ोन और कंप्यूटर<small>बिना इंस्टॉल, बिना साइन-अप</small></div>
+ </div>
+ <div class="fd"><u style="--d:5.6s;background:#e8344a"></u><u style="--d:5.9s;background:#ff8a1f"></u><u style="--d:6.2s;background:#ffd021"></u><u style="--d:6.5s;background:#26a65b"></u><u style="--d:6.8s;background:#2f6df6"></u></div>
+ <div class="sub a" style="--d:7.2s">पाँच उँगलियाँ, अपना संकेत-कोड</div>
+</section>
+
+<!-- Scene 4 -->
+<section class="sc" id="s3">
+ <div class="grid" id="g" style="position:absolute;top:8%;opacity:1;animation:out .8s ease 3.4s forwards"></div>
+ <div class="logo a" style="--d:4.2s"><svg viewBox="0 0 100 100"><use href="#hand"/></svg></div>
+ <h1 class="a" style="--d:4.8s;font-size:7cqw;margin-top:1.2cqw"><span class="ul">संकेतवाणी</span></h1>
+ <div class="sub a" style="--d:5.4s">संकेत से शब्द तक का सफर</div>
+ <div class="sub a" style="--d:6.4s;color:var(--navy);font-weight:600">बच्चों ने बनाया, सबके लिए</div>
+ <div class="sub a" style="--d:7.2s;font-size:1.9cqw">राजकीय संदीपनी विद्यालय, चटवाई (म.प्र.)</div>
+</section>
+</div>
+<div id="ctl"><button id="go">▶ चलाएँ</button><div id="bar"><i></i></div><span id="tm">0:00 / 0:40</span></div>
+
+<script>
+// letter tiles for finale
+const cols=['#fde4e7','#fff1d6','#dcecff','#dff5e6','#ebe4fb'],dc=['#e8344a','#ff8a1f','#ffd021','#26a65b','#2f6df6'];
+document.getElementById('g').innerHTML=[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map((c,i)=>`<div style="background:${cols[i%5]};--d:${(0.2+i*0.1).toFixed(1)}s">${c}<span>${[0,1,2].map(k=>`<u style="background:${dc[(i+k*2)%5]}"></u>`).join('')}</span></div>`).join('');
+const sc=[...document.querySelectorAll('.sc')],bar=document.querySelector('#bar i'),tm=document.getElementById('tm');
+let T=[],raf,ac,t0;
+function show(n){sc.forEach((s,i)=>{s.classList.remove('on');if(i==n){void s.offsetWidth;s.classList.add('on')}})}
+function music(){try{ac=new(window.AudioContext||window.webkitAudioContext)();const m=ac.createGain();m.gain.value=.16;m.connect(ac.destination);
+const ch=[[220,277,330],[196,247,294],[175,220,262],[196,247,294]],b=ac.currentTime+.1;
+for(let i=0;i<20;i++){const t=b+i*2,c=ch[i%4];
+c.forEach(f=>{const o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.35,t+.6);g.gain.linearRampToValueAtTime(0,t+2.1);o.connect(g).connect(m);o.start(t);o.stop(t+2.2)});
+for(let k=0;k<4;k++){const o=ac.createOscillator(),g=ac.createGain(),tt=t+k*.5;o.type='triangle';o.frequency.value=c[k%3]*2;g.gain.setValueAtTime(.5,tt);g.gain.exponentialRampToValueAtTime(.001,tt+.45);o.connect(g).connect(m);o.start(tt);o.stop(tt+.5)}}
+const o=ac.createOscillator(),g=ac.createGain(),tt=b+6.4;o.frequency.setValueAtTime(110,tt);o.frequency.exponentialRampToValueAtTime(40,tt+1.2);g.gain.setValueAtTime(.9,tt);g.gain.exponentialRampToValueAtTime(.001,tt+1.2);o.connect(g).connect(m);o.start(tt);o.stop(tt+1.3)}catch(e){}}
+function play(){T.forEach(clearTimeout);cancelAnimationFrame(raf);if(ac)ac.close();music();
+T=[0,1,2,3].map(i=>setTimeout(()=>show(i),i*10000));T.push(setTimeout(()=>{document.getElementById('go').textContent='↻ फिर चलाएँ'},40000));
+t0=performance.now();(function f(){const s=Math.min((performance.now()-t0)/1000,40);bar.style.width=s/40*100+'%';tm.textContent='0:'+String(Math.floor(s)).padStart(2,'0')+' / 0:40';if(s<40)raf=requestAnimationFrame(f)})();
+document.getElementById('go').textContent='⏸ चल रहा है'}
+document.getElementById('go').onclick=play;show(0);
+</script></body></html>
